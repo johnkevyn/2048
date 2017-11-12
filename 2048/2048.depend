@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1510501507 source:c:\users\john toguem fotso\documents\john kevyn\l1 mpi\s1\informatique - info 111\projet\2048\2048\main.cpp
+	<iostream>
+	<vector>
+	"modele.h"
+
+1510501702 c:\users\john toguem fotso\documents\john kevyn\l1 mpi\s1\informatique - info 111\projet\2048\2048\modele.h
+	<vector>
+	<string>
+
+1510501369 source:c:\users\john toguem fotso\documents\john kevyn\l1 mpi\s1\informatique - info 111\projet\2048\2048\modele.cpp
+	"modele.h"
+

@@ -1,5 +1,8 @@
 #ifndef MODELE_H_INCLUDED
 #define MODELE_H_INCLUDED
+#include<vector>
+#include<string>
+using namespace std;
 
 const int GAUCHE = 7, DROITE = 4, HAUT = 8, BAS = 2;
 typedef vector<vector<int>> Plateau;
