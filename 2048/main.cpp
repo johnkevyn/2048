@@ -6,9 +6,13 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
 
     Plateau t;
     t=plateauInitial();
+
+    cout<<dessine(t);
+
+
     return 0;
+
 }
