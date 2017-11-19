@@ -10,7 +10,11 @@ int main()
     Plateau t;
     t=plateauInitial();
 
+    t=deplacementGauche(t);
+
+
     cout<<dessine(t);
+
 
 
     return 0;

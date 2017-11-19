@@ -1,16 +1,18 @@
 # depslib dependency file v1.0
-1510950982 source:c:\users\john toguem fotso\documents\john kevyn\l1 mpi\s1\informatique - info 111\projet\2048\2048\main.cpp
+1511116271 source:c:\users\john toguem fotso\documents\john kevyn\l1 mpi\s1\informatique - info 111\projet\2048\2048\main.cpp
 	<iostream>
 	<vector>
 	"modele.h"
 
-1510501702 c:\users\john toguem fotso\documents\john kevyn\l1 mpi\s1\informatique - info 111\projet\2048\2048\modele.h
+1511116125 c:\users\john toguem fotso\documents\john kevyn\l1 mpi\s1\informatique - info 111\projet\2048\2048\modele.h
 	<vector>
 	<string>
 
-1510953325 source:c:\users\john toguem fotso\documents\john kevyn\l1 mpi\s1\informatique - info 111\projet\2048\2048\modele.cpp
+1511116144 source:c:\users\john toguem fotso\documents\john kevyn\l1 mpi\s1\informatique - info 111\projet\2048\2048\modele.cpp
 	"modele.h"
 	<stdlib.h>
 	<iostream>
 	<string>
+	<sstream>
+	<time.h>
 
