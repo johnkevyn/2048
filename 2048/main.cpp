@@ -11,9 +11,10 @@ int main()
     t=plateauInitial();
 
     t=deplacementGauche(t);
-
-
-    cout<<dessine(t);
+     cout<<dessine(t);
+     cout<<"Et ensuite"<<endl;
+     t=deplacementBas(t);
+     cout<<dessine(t);
 
 
 

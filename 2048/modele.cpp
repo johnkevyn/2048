@@ -107,6 +107,8 @@ Plateau deplacementGauche(Plateau plateau)
         }
     }
 
+    //Ici commence le déplacement des case.
+
     for(int i=0; i<plateau.size(); i++)
     {
         for(int j=0; j<plateau[i].size(); j++)
@@ -153,4 +155,133 @@ Plateau deplacementGauche(Plateau plateau)
     return plateau;
 
 }
+
+Plateau deplacementDroite(Plateau plateau){
+
+}
+Plateau deplacementHaut(Plateau plateau){
+    /**
+    //Debut du code pour la somme
+
+
+
+
+
+    //Debut du code pour le deplacement
+
+    for(int j=0; j<plateau.size(); j++)
+    {
+        for(int i=0; i<plateau[j].size(); i++)
+        {
+            if(plateau[i][j]==0) //c'est bon
+            {
+                for(int m=i; m<plateau[i].size(); m++)
+                {
+                    if(plateau[m][j]!=0)
+                    {
+                        plateau[i][j]=plateau[m][j];
+                        plateau[m][j]=0;
+                    }
+
+                }
+
+            }
+        }
+
+    }
+
+//Ici je choisit aléatoirement une case du tableau pour vérifié si elle vaut 0
+    int randomLigne=rand()%(3-0 + 0) + 0;
+    int randomColone=rand()%(3-0 + 0) + 0;
+
+    while(plateau[randomLigne][randomColone]!=0)
+    {
+        int randomLigne=rand()%(3-0 + 0) + 0;
+        int randomColone=rand()%(3-0 + 0) + 0;
+    }
+
+    int probabilite_4=rand()%(10-1 + 1) + 1;
+    if(probabilite_4==4)
+    {
+        plateau[randomLigne][randomColone]=4;
+    }
+    else if(probabilite_4!=4)
+    {
+        plateau[randomLigne][randomColone]=2;
+
+    }
+
+    return plateau;
+
+**/
+}
+
+Plateau deplacementBas(Plateau plateau){
+    for(int j=0; j<plateau.size(); j++)
+    {
+        for(int i=0; i<plateau[j].size();  i++)
+        {
+            if(plateau[i][j]!=0)
+            {
+                for(int l=i+1; l<plateau[j].size(); l++)
+                {
+                    if(plateau[l][j]==plateau[i][j])
+                    {
+                        plateau[i][j]=plateau[i][j]*2;
+                        plateau[l][j]=0;
+                    }
+                }
+            }
+        }
+    }
+//ici commence le déplacement de déplacementBas.
+
+    for(int j=0; j<plateau.size(); j++)
+    {
+        for(int i=plateau[j].size()-1; i>=0; i--)
+        {
+            if(plateau[i][j]==0) //c'est bon
+            {
+                for(int n=i-1; n>=0; n--)
+                {
+                    if(plateau[n][j]!=0)
+                    {
+                        plateau[i][j]=plateau[n][j];
+                        plateau[n][j]=0;
+                    }
+                }
+            }
+        }
+    }
+//Ici je choisit aléatoirement une case du tableau pour vérifié si elle vaut 0
+
+    int randomLigne=rand()%(3-0 + 0) + 0;
+    int randomColone=rand()%(3-0 + 0) + 0;
+
+    while(plateau[randomLigne][randomColone]!=0)
+    {
+        int randomLigne=rand()%(3-0 + 0) + 0;
+        int randomColone=rand()%(3-0 + 0) + 0;
+    }
+
+    int probabilite_4=rand()%(10-1 + 1) + 1;
+    if(probabilite_4==4)
+    {
+        plateau[randomLigne][randomColone]=4;
+    }
+    else if(probabilite_4!=4)
+    {
+        plateau[randomLigne][randomColone]=2;
+
+    }
+
+    return plateau;
+
+
+
+
+}
+
+
+
 
