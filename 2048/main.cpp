@@ -6,11 +6,13 @@ using namespace std;
 
 int main()
 {
+    int direction;
+
+
 
     Plateau t;
     t=plateauInitial();
-
-    t=deplacementGauche(t);
+     t=deplacementGauche(t);
      cout<<dessine(t);
      cout<<"Et ensuite"<<endl;
      t=deplacementGauche(t);
@@ -60,6 +62,13 @@ cout<<"Et ensuite"<<endl;
      cout<<"Et ensuite"<<endl;
      t=deplacementHaut(t);
      cout<<dessine(t);
-    return 0;
+
+
+
+
+
+
+
+return 0;
 
 }

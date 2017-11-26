@@ -155,15 +155,14 @@ Plateau deplacementGauche(Plateau plateau)
 }
 
 Plateau deplacementDroite(Plateau plateau){
-
-   srand (time(NULL));
-   for(int i=plateau.size(); i>=0; i--)
+  srand (time(NULL));
+   for(int i=0; i<plateau.size(); i++)
     {
         for(int j=0; j<plateau[i].size(); j++)
         {
             if(plateau[i][j]!=0)
             {
-                for(int l=j-1; l>=0; l--)
+                for(int l=j+1; l<plateau[i].size(); l++)
                 {
                     if(plateau[i][l]==plateau[i][j])
                     {
@@ -220,6 +219,8 @@ Plateau deplacementDroite(Plateau plateau){
     }
 
     return plateau;
+
+
 
 
 }
@@ -360,6 +361,32 @@ Plateau deplacementBas(Plateau plateau){
 
 
 }
+
+Plateau deplacement(Plateau plateau, int direction){
+    if(direction==7){
+        plateau=deplacementGauche(plateau);
+    }
+    else if(direction==4){
+        plateau=deplacementDroite(plateau);
+    }
+    else if(direction==8){
+        plateau=deplacementHaut(plateau);
+    }
+    else if(direction==2){
+        plateau=deplacementBas(plateau);
+    }
+
+    return plateau;
+}
+
+bool estTermine(Plateau plateau){
+    if(deplacementGauche(plateau)==plateau and deplacementDroite(plateau)==plateau and deplacementHaut(plateau)==plateau and deplacementBas(plateau)==plateau){
+        return true;
+    }
+    return false;
+
+}
+
 
 
 
