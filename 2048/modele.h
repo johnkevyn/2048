@@ -17,6 +17,6 @@ string dessine(Plateau g);//Fait
 bool estTermine(Plateau plateau);//Fait
 bool estGagnant(Plateau plateau);  //Fait
 int score(Plateau plateau);
-
+Plateau alea(Plateau plateau);
 
 #endif // MODELE_H_INCLUDED

@@ -144,6 +144,7 @@ Plateau deplacementGauche(Plateau plateau)
                     {
                         plateau[i][j]=plateau[i][k];
                         plateau[i][k]=0;
+                        break;
                     }
 
                 }
@@ -153,26 +154,6 @@ Plateau deplacementGauche(Plateau plateau)
 
     }
 
-    //Ici je choisit aléatoirement une case du tableau pour vérifié si elle vaut 0
-    int randomLigne=rand()%(4-0 + 0) + 0;
-    int randomColone=rand()%(4-0 + 0) + 0;
-
-    while(plateau[randomLigne][randomColone]!=0)
-    {
-        randomLigne=rand()%(4-0 + 0) + 0;
-        randomColone=rand()%(4-0 + 0) + 0;
-    }
-
-    int probabilite_4=rand()%(10-1 + 1) + 1;
-    if(probabilite_4==4)
-    {
-        plateau[randomLigne][randomColone]=4;
-    }
-    else if(probabilite_4!=4)
-    {
-        plateau[randomLigne][randomColone]=2;
-
-    }
 
     return plateau;
 
@@ -215,6 +196,7 @@ Plateau deplacementDroite(Plateau plateau){
                     {
                         plateau[i][j]=plateau[i][k];
                         plateau[i][k]=0;
+                        break;
                     }
 
                 }
@@ -224,26 +206,6 @@ Plateau deplacementDroite(Plateau plateau){
 
     }
 
-    //Ici je choisit aléatoirement une case du tableau pour vérifié si elle vaut 0
-    int randomLigne=rand()%(4-0 + 0) + 0;
-    int randomColone=rand()%(4-0 + 0) + 0;
-
-    while(plateau[randomLigne][randomColone]!=0)
-    {
-        randomLigne=rand()%(4-0 + 0) + 0;
-        randomColone=rand()%(4-0 + 0) + 0;
-    }
-
-    int probabilite_4=rand()%(10-1 + 1) + 1;
-    if(probabilite_4==4)
-    {
-        plateau[randomLigne][randomColone]=4;
-    }
-    else if(probabilite_4!=4)
-    {
-        plateau[randomLigne][randomColone]=2;
-
-    }
 
     return plateau;
 
@@ -291,6 +253,7 @@ Plateau deplacementHaut(Plateau plateau){
                     {
                         plateau[i][j]=plateau[m][j];
                         plateau[m][j]=0;
+                        break;
                     }
 
                 }
@@ -300,27 +263,6 @@ Plateau deplacementHaut(Plateau plateau){
 
     }
 
-//Ici je choisit aléatoirement une case du tableau pour vérifié si elle vaut 0
-    srand (time(NULL));
-    int randomLigne=rand()%(4-0 + 0) + 0;
-    int randomColone=rand()%(4-0 + 0) + 0;
-
-    while(plateau[randomLigne][randomColone]!=0)
-    {
-        randomLigne=rand()%(4-0 + 0) + 0;
-        randomColone=rand()%(4-0 + 0) + 0;
-    }
-
-    int probabilite_4=rand()%(10-1 + 1) + 1;
-    if(probabilite_4==4)
-    {
-        plateau[randomLigne][randomColone]=4;
-    }
-    else if(probabilite_4!=4)
-    {
-        plateau[randomLigne][randomColone]=2;
-
-    }
 
     return plateau;
 
@@ -362,13 +304,51 @@ Plateau deplacementBas(Plateau plateau){
                     {
                         plateau[i][j]=plateau[n][j];
                         plateau[n][j]=0;
+                        break;
                     }
                 }
             }
         }
     }
-//Ici je choisit aléatoirement une case du tableau pour vérifié si elle vaut 0
-    srand (time(NULL));
+ return plateau;
+
+
+
+
+}
+
+Plateau deplacement(Plateau plateau, int direction){
+    if(direction==7){
+        plateau=deplacementGauche(plateau);
+    }
+    else if(direction==4){
+        plateau=deplacementDroite(plateau);
+    }
+    else if(direction==8){
+        plateau=deplacementHaut(plateau);
+    }
+    else if(direction==2){
+        plateau=deplacementBas(plateau);
+    }
+
+    plateau=alea(plateau);
+
+    return plateau;
+}
+
+bool estTermine(Plateau plateau){
+    if(deplacementGauche(plateau)==plateau and deplacementDroite(plateau)==plateau and deplacementHaut(plateau)==plateau and deplacementBas(plateau)==plateau){
+        return true;
+    }
+    return false;
+
+}
+
+Plateau alea(Plateau plateau){
+    for(int i=0; i<plateau.size(); i++){
+        for(int j=0; j<plateau[i].size(); j++){
+            if(plateau[i][j]==0){
+                 srand (time(NULL));
     int randomLigne=rand()%(4-0 + 0) + 0;
     int randomColone=rand()%(4-0 + 0) + 0;
 
@@ -391,34 +371,13 @@ Plateau deplacementBas(Plateau plateau){
 
     return plateau;
 
+            }
+        }
 
 
-
-}
-
-Plateau deplacement(Plateau plateau, int direction){
-    if(direction==7){
-        plateau=deplacementGauche(plateau);
-    }
-    else if(direction==4){
-        plateau=deplacementDroite(plateau);
-    }
-    else if(direction==8){
-        plateau=deplacementHaut(plateau);
-    }
-    else if(direction==2){
-        plateau=deplacementBas(plateau);
     }
 
     return plateau;
-}
-
-bool estTermine(Plateau plateau){
-    if(deplacementGauche(plateau)==plateau and deplacementDroite(plateau)==plateau and deplacementHaut(plateau)==plateau and deplacementBas(plateau)==plateau){
-        return true;
-    }
-    return false;
-
 }
 
 
