@@ -41,8 +41,8 @@ int main()
 	} while(b==false );
 
 	if ( estGagnant(p) ) {
-		cout<<"Bravo! vous avez réussi le défi !!\nAppuyez sur M pour revenir au menu.\n";
+		cout<<"Bravo! vous avez réussi le défi !!\n";
 	} else {
-		cout<<"Jeu terminé! dommage, vous aurez plus de chance la prochaine fois.\nAppuyez sur M pour revenir au menu.\n";
+		cout<<"Jeu terminé! dommage, vous aurez plus de chance la prochaine fois.\n";
 	}
 }

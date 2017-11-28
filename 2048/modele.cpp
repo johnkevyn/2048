@@ -19,22 +19,41 @@ Plateau plateauInitial()
     {
         p[i]=vector<int> (4);
     }
-    int randomLigne=rand()%(3-0 + 0) + 0;
+    int randomLigne1=rand()%(3-0 + 0) + 0;
 
-    int randomColonne=rand()%(3-0 + 0) + 0;
+    int randomColonne1=rand()%(3-0 + 0) + 0;
     int probabilite_4=rand()%(10-1 + 1) + 1;
     if(probabilite_4==4)
     {
-        p[randomLigne][randomColonne]=4;
+        p[randomLigne1][randomColonne1]=4;
     }
     else if(probabilite_4!=4)
     {
-        p[randomLigne][randomColonne]=2;
+        p[randomLigne1][randomColonne1]=2;
 
     }
-    std::cout<<randomColonne<<"   "<<randomLigne<<endl;
+    int randomLigne2;
+    int randomColonne2;
+    do{
+    randomLigne2=rand()%(3-0 + 0) + 0;
+     randomColonne2=rand()%(3-0 + 0) + 0;
+    }
+    while( (randomLigne1==randomLigne2)&& (randomColonne1==randomColonne2));
+        probabilite_4=rand()%(10-1 + 1) + 1;
+    if(probabilite_4==4)
+    {
+        p[randomLigne2][randomColonne2]=4;
+    }
+    else if(probabilite_4!=4)
+    {
+        p[randomLigne2][randomColonne2]=2;
 
-    p[randomLigne][randomColonne]=2;
+    }
+
+
+    //std::cout<<randomColonne<<"   "<<randomLigne<<endl;
+
+    //p[randomLigne][randomColonne]=2;
 
 
 
