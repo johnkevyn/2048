@@ -17,9 +17,14 @@ int main()
     raw();
     keypad(stdscr,TRUE);
 
+    attron(A_BLINK);//La fonction le met en gras.
+            mvprintw(0,0,"2048  par J.TOGUEM et L.BENALI\n");
 
     while(1){
-        mvprintw(0,0, dessine(p).c_str());
+            attron(A_STANDOUT);//La fonction le met en gras.
+        attron(A_BOLD);//La fonction surligne
+
+        mvprintw(1,0, dessine(p).c_str());
         refresh();
         k=getch();
 
@@ -36,6 +41,10 @@ int main()
         else if(k==KEY_UP){
             p=deplacement(p, 8);
         }
+        else if(k==KEY_BACKSPACE){
+            endwin();
+        }
+
     }
 
     endwin();
