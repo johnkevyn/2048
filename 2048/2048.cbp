@@ -33,9 +33,11 @@
 			<Add option="-Wall" />
 			<Add option="-std=c++0x" />
 			<Add option="-fexceptions" />
+			<Add directory="C:/pdcurs34_1/win32" />
+			<Add directory="C:/pdcurs34_1" />
 		</Compiler>
 		<Linker>
-			<Add library="C:/Users/John Toguem Fotso/Desktop/pdc34dllw/pdcurses.lib" />
+			<Add library="C:/pdcurs34_1/win32/pdcurses.a" />
 		</Linker>
 		<Unit filename="main.cpp" />
 		<Unit filename="modele.cpp" />
