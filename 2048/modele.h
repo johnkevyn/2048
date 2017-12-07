@@ -2,8 +2,9 @@
 #define MODELE_H_INCLUDED
 #include<vector>
 #include<string>
-using namespace std;
 
+using namespace std;
+extern int score;
 const int GAUCHE = 7, DROITE = 4, HAUT = 8, BAS = 2;
 typedef vector<vector<int>> Plateau;
 Plateau plateauVide(); //Fait
@@ -16,7 +17,7 @@ Plateau deplacement(Plateau plateau, int direction);//Fait
 string dessine(Plateau g);//Fait
 bool estTermine(Plateau plateau);//Fait
 bool estGagnant(Plateau plateau);  //Fait
-int score(Plateau plateau);
+//int score(Plateau plateau);
 Plateau alea(Plateau plateau);
 
 #endif // MODELE_H_INCLUDED

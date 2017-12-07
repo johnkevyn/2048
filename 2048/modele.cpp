@@ -111,17 +111,19 @@ string dessine(Plateau g)
 
 bool estGagnant(Plateau plateau)
 {
+    int tmp_score=score;
     for(int i=0; i<plateau.size(); i++)
     {
         for(int j=0; j<plateau[i].size(); j++)
         {
             if(plateau[i][j]==2048)
             {
+                score=tmp_score;
                 return true;
             }
         }
     }
-
+    score=tmp_score;
     return false;
 }
 
@@ -141,6 +143,7 @@ Plateau deplacementGauche(Plateau plateau)
                     {
                         plateau[i][j]=plateau[i][j]*2;
                         plateau[i][l]=0;
+                        score+=plateau[i][j];
                     }
                     break;
 
@@ -194,10 +197,11 @@ Plateau deplacementDroite(Plateau plateau){
                     {
                         plateau[i][j]=plateau[i][j]*2;
                         plateau[i][l]=0;
+                        score+=plateau[i][j];
                     }
                     break;
                     }
-                                    }
+                    }
             }
         }
     }
@@ -249,6 +253,7 @@ Plateau deplacementHaut(Plateau plateau){
                     {
                         plateau[i][j]=plateau[i][j]*2;
                         plateau[l][j]=0;
+                        score+=plateau[i][j];
                     }
                     break;
                     }
@@ -303,6 +308,7 @@ Plateau deplacementBas(Plateau plateau){
                     {
                         plateau[i][j]=plateau[i][j]*2;
                         plateau[l][j]=0;
+                        score+=plateau[i][j];
                     }
                     break;
                     }
@@ -357,9 +363,12 @@ Plateau deplacement(Plateau plateau, int direction){
 }
 
 bool estTermine(Plateau plateau){
+    int tmp_score=score;
     if(deplacementGauche(plateau)==plateau and deplacementDroite(plateau)==plateau and deplacementHaut(plateau)==plateau and deplacementBas(plateau)==plateau){
+        score=tmp_score;
         return true;
     }
+    score=tmp_score;
     return false;
 
 }

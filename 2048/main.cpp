@@ -3,14 +3,12 @@
 #include"modele.h"
 #include<curses.h>
 using namespace std;
-
+int score;
 int main()
 {
-
-
+    score=0;
     Plateau p;
 	p = plateauInitial();
-
     int k;
     initscr();
     noecho();
@@ -21,10 +19,24 @@ int main()
             mvprintw(0,0,"2048  par J.TOGUEM et L.BENALI\n");
 
     while(1){
+            if ( estGagnant(p) ) {
+		mvprintw(1,0,"Bravo! vous avez réussi le défi !!");
+		getch();
+		refresh();
+		return 0;
+	}
+	if(estTermine(p)){
+        mvprintw(1,0,"Jeu terminé! dommage, vous aurez plus de chance la prochaine fois");
+		getch();
+		refresh();
+		return 0;
+	}
+
+            mvprintw(1,0,"SCORE: %d",score);
             attron(A_STANDOUT);//La fonction le met en gras.
         attron(A_BOLD);//La fonction surligne
 
-        mvprintw(1,0, dessine(p).c_str());
+        mvprintw(2,0, dessine(p).c_str());
         refresh();
         k=getch();
 
@@ -40,9 +52,6 @@ int main()
         }
         else if(k==KEY_UP){
             p=deplacement(p, 8);
-        }
-        else if(k==KEY_BACKSPACE){
-            endwin();
         }
 
     }
