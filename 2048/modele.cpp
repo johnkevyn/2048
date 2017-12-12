@@ -344,6 +344,8 @@ Plateau deplacementBas(Plateau plateau){
 }
 
 Plateau deplacement(Plateau plateau, int direction){
+    Plateau q;
+    q=plateau;
     if(direction==7){
         plateau=deplacementGauche(plateau);
     }
@@ -357,7 +359,13 @@ Plateau deplacement(Plateau plateau, int direction){
         plateau=deplacementBas(plateau);
     }
 
+    if(q!=plateau){
     plateau=alea(plateau);
+    }
+    else{
+        cout<<"plus de deplacements possibles de ce cote la, entrez une autre commande"<<endl;
+    }
+
 
     return plateau;
 }

@@ -11,11 +11,11 @@ int main()
 	p = plateauInitial();
     int k;
     initscr();
-    noecho();
-    raw();
-    keypad(stdscr,TRUE);
+    noecho();//Fonction qui permet de ne pas afficher ce qu'on écrit.
+    raw();//Fonction qui permet de pas avoir besoin d'appuyer sur Enter pour que l'ordinateur exécute la commande demandé
+    keypad(stdscr,TRUE);//Fonction qui permet de pouvoir utiliser les flèches dirrectionel.
 
-    attron(A_BLINK);//La fonction le met en gras.
+   attron(A_BLINK);//La fonction le met en gras.
             mvprintw(0,0,"2048  par J.TOGUEM et L.BENALI\n");
 
     while(1){
@@ -27,13 +27,13 @@ int main()
 	}
 	if(estTermine(p)){
         mvprintw(1,0,"Jeu terminé! dommage, vous aurez plus de chance la prochaine fois");
-		getch();
-		refresh();
+		getch();//Fonction qui permet de lire un caractère entré par l'utilisateur
+		refresh();//Fonction qui permet de rafrachir ce qui a affiché.
 		return 0;
 	}
 
             mvprintw(1,0,"SCORE: %d",score);
-            attron(A_STANDOUT);//La fonction le met en gras.
+        attron(A_STANDOUT);//La fonction le met en gras.
         attron(A_BOLD);//La fonction surligne
 
         mvprintw(2,0, dessine(p).c_str());
