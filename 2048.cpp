@@ -4,9 +4,11 @@
 #include<string>
 #include<sstream>
 #include <time.h>
-//#include<stdio.h>
-//#include<stdlib.h>
+using namespace std;
 
+#define ASSERT(C) if ( !(C) ) { std::cerr << "Test failed: "#C << std::endl; }
+
+// un ensemble de chaînes de caractères qui définissent les couleurs
 const char *const basic="\033[0m";
 const char *const red= "\033[0;30;41m";
 const char *const blanc="\033[0;34;47m";
@@ -71,7 +73,7 @@ Plateau plateauInitial()
 
 string dessine(Plateau g)
 {
-    std::string tableauDessine;
+    string tableauDessine;
 	string h;
     tableauDessine=tableauDessine+red+"*************************"+basic+"\n";
     for(int i=0; i<g.size(); i++)
@@ -81,28 +83,28 @@ string dessine(Plateau g)
         {
             if(g[i][j]>=1 and g[i][j]<10)
             {
-                std::ostringstream stream;
+                ostringstream stream;
                 stream << g[i][j];
 				//h = to_string(g[i][j]);				
                 tableauDessine=tableauDessine+red+" "+basic+blanc+"  "+stream.str()+"  "+basic;
             }
             else if(g[i][j]>=10 and g[i][j]<100)
             {
-                std::ostringstream stream;
+                ostringstream stream;
                 stream << g[i][j];
 				//h = to_string(g[i][j]);
                 tableauDessine=tableauDessine+red+" "+basic+jaune+" "+stream.str()+"  "+basic;
             }
             else if(g[i][j]>=100 and g[i][j]<1000)
             {
-                std::ostringstream stream;
+                ostringstream stream;
                 stream << g[i][j];
 				//h = to_string(g[i][j]);
                 tableauDessine=tableauDessine+red+" "+basic+bleu+" "+stream.str()+" "+basic;
             }
             else if(g[i][j]>=1000 and g[i][j]<=2048)
             {
-                std::ostringstream stream;
+                ostringstream stream;
                 stream << g[i][j];
 				//h = to_string(g[i][j]);
                 tableauDessine=tableauDessine+red+" "+basic+mauve+" "+stream.str()+" "+basic;
@@ -374,7 +376,7 @@ Plateau deplacement(Plateau plateau, int direction){
     plateau=alea(plateau);
 	}
 	else{
-		cout<<"veuillez entrer une autre commande"<<endl;
+		cout<<"Plus de déplacement possible de ce coté là."<<endl;
 	}
     return plateau;
 }
@@ -421,4 +423,21 @@ Plateau alea(Plateau plateau){
     }
 
     return plateau;
+}
+
+void testsFonctions(){
+	Plateau T={ {4,4,0,0},{4,4,0,0},{4,4,0,0},{4,4,0,0} };
+	ASSERT (deplacementGauche ( { {2,2,0,4},{2,2,0,4},{2,2,0,4},{2,2,0,4} } ) == T );
+	T={ {0,0,4,4},{0,0,4,4},{0,0,4,4},{0,0,4,4} };
+	ASSERT (deplacementDroite ( { {4,0,2,2},{4,0,2,2},{4,0,2,2},{4,0,2,2} } ) == T );
+	T={ {4,4,4,4},{4,4,4,4},{0,0,0,0},{0,0,0,0} };
+	ASSERT (deplacementHaut ( { {2,2,2,2},{2,2,2,2},{0,0,0,0},{4,4,4,4} } ) == T );
+	T={ {0,0,0,0},{0,0,0,0},{4,4,4,4},{4,4,4,4} };
+	ASSERT (deplacementBas ( { {4,4,4,4},{0,0,0,0},{2,2,2,2},{2,2,2,2} } ) == T );
+	
+	ASSERT ( estGagnant( { {2048,4,4,4},{0,0,0,0},{2,2,2,2},{2,2,2,2} } ) );
+	ASSERT ( estGagnant( { {4,4,4,4},{0,2048,0,0},{2,2,2048,2},{2,2,2,2} } ) );
+	ASSERT ( not estGagnant( { {4,4,4,4},{0,0,0,0},{2,2,2,2},{2,2,2,2} } ) );
+	ASSERT ( estTermine( { {16,32,1024,256},{4,128,256,8},{2,32,8,4},{4,8,4,2} } ) );
+	ASSERT ( not estTermine( { {4,4,4,4},{0,0,0,0},{2,2,2,2},{2,2,2,2} } ) ); 
 }
