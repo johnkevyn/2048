@@ -4,6 +4,7 @@
 #include<string>
 #include<sstream>
 #include <time.h>
+#include<assert.h>
 
 //Renvoi un plateau
 Plateau plateauVide()
@@ -415,6 +416,24 @@ Plateau alea(Plateau plateau){
     }
 
     return plateau;
+}
+
+
+void testsFonctions(){
+	Plateau T={ {4,4,0,0},{4,4,0,0},{4,4,0,0},{4,4,0,0} };
+	assert(deplacementGauche ( { {2,2,0,4},{2,2,0,4},{2,2,0,4},{2,2,0,4} } ) == T );
+	T={ {0,0,4,4},{0,0,4,4},{0,0,4,4},{0,0,4,4} };
+	assert(deplacementDroite ( { {4,0,2,2},{4,0,2,2},{4,0,2,2},{4,0,2,2} } ) == T );
+	T={ {4,4,4,4},{4,4,4,4},{0,0,0,0},{0,0,0,0} };
+	assert(deplacementHaut ( { {2,2,2,2},{2,2,2,2},{0,0,0,0},{4,4,4,4} } ) == T );
+	T={ {0,0,0,0},{0,0,0,0},{4,4,4,4},{4,4,4,4} };
+	assert(deplacementBas ( { {4,4,4,4},{0,0,0,0},{2,2,2,2},{2,2,2,2} } ) == T );
+
+	assert( estGagnant( { {2048,4,4,4},{0,0,0,0},{2,2,2,2},{2,2,2,2} } ) );
+	assert( estGagnant( { {4,4,4,4},{0,2048,0,0},{2,2,2048,2},{2,2,2,2} } ) );
+	assert( not estGagnant( { {4,4,4,4},{0,0,0,0},{2,2,2,2},{2,2,2,2} } ) );
+	assert( estTermine( { {16,32,1024,256},{4,128,256,8},{2,32,8,4},{4,8,4,2} } ) );
+	assert( not estTermine( { {4,4,4,4},{0,0,0,0},{2,2,2,2},{2,2,2,2} } ) );
 }
 
 

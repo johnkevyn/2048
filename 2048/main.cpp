@@ -2,6 +2,7 @@
 #include <vector>
 #include"modele.h"
 #include<curses.h>
+#include<assert.h>
 using namespace std;
 int score;
 int main()
@@ -103,6 +104,8 @@ int main()
 	} else {
 		cout<<"Jeu terminé! dommage, vous aurez plus de chance la prochaine fois.\n";
 	}*/
+
+
 	return 0;
 
 }

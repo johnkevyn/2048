@@ -2,7 +2,7 @@
 #define MODELE_H_INCLUDED
 #include<vector>
 #include<string>
-
+#include<assert.h>
 using namespace std;
 extern int score;
 const int GAUCHE = 7, DROITE = 4, HAUT = 8, BAS = 2;
