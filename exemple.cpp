@@ -64,25 +64,27 @@ const char *const basic1="\033[0m";
 	p = plateauInitial();
 		cout<<dessine(p)<<endl;
     int d;
-	cout<<red1<<"Intructions:"<<basic1<< "utilisez les boutons h:haut, b:bas, g:gauche, d:droite afin de deplacer les tuiles"<<endl;
+	cout<<red1<<"Intructions:"<<basic1<< "utilisez les boutons z:haut, q:gauche, s:bas,  d:droite afin de deplacer les tuiles"<<endl;
 	cout<<"Le but du jeu est de faire une tuile '2048'. Bonne chance."<<endl;
-
+	
+	testsFonctions();  //appelle la fonction des tests
+	
 	do {
 		cout<<"Entrez une commande: ";
 		cin>>com;
-		while (com!="b" && com!="g" && com!="d" && com!="h") {
+		while (com!="s" && com!="q" && com!="d" && com!="z") {
 		cout<<"Entrez une commande: ";
 		cin>>com;
 		}
 		cout<<"\033[2J\033[1;1H";
-		if ( com=="b")
-		d=BAS;
-		else if (com=="g")
-		d=GAUCHE;
+		if ( com=="s")
+		d=2;
+		else if (com=="q")
+		d=7;
 		else if (com=="d")
-		d=DROITE;
-		else if (com=="h")
-		d=HAUT;
+		d=4;
+		else if (com=="z")
+		d=8;
 		p = deplacement(p,d);
 		cout<<dessine(p);
 		cout<<"          Copyright © LB&JKT"<<endl;
