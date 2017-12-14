@@ -10,7 +10,7 @@ typedef vector<vector<int>> Plateau;
 Plateau plateauVide(); //Fait
 Plateau plateauInitial(); //Fait
 Plateau deplacementGauche(Plateau plateau);//Fait
-Plateau deplacementDroite(Plateau plateau);//Fait  (je crois qu'il ya un probleme avec l'apparition des valeurs aléatoires
+Plateau deplacementDroite(Plateau plateau);//Fait  
 Plateau deplacementHaut(Plateau plateau);//Fait
 Plateau deplacementBas(Plateau plateau);//Fait
 Plateau deplacement(Plateau plateau, int direction);//Fait
@@ -19,5 +19,6 @@ bool estTermine(Plateau plateau);//Fait
 bool estGagnant(Plateau plateau);  //Fait
 //int score(Plateau plateau);
 Plateau alea(Plateau plateau);
+void testsFonctions();//Fait
 
 #endif // MODELE_H_INCLUDED
