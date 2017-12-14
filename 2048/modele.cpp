@@ -5,6 +5,7 @@
 #include<sstream>
 #include <time.h>
 #include<assert.h>
+#define ASSERT(C) if ( !(C) ) { std::cerr << "Test failed: "#C << std::endl; }
 
 //Renvoi un plateau
 Plateau plateauVide()
@@ -154,7 +155,7 @@ Plateau deplacementGauche(Plateau plateau)
         }
     }
 
-    //Ici commence le déplacement des case.
+    //Ici commence le dÃ©placement des case.
 
     for(int i=0; i<plateau.size(); i++)
     {
@@ -207,7 +208,7 @@ Plateau deplacementDroite(Plateau plateau){
         }
     }
 
-    //Ici commence le déplacement des case.
+    //Ici commence le dÃ©placement des case.
 
     for(int i=0; i<plateau.size(); i++)
     {
@@ -317,7 +318,7 @@ Plateau deplacementBas(Plateau plateau){
             }
         }
     }
-//ici commence le déplacement de déplacementBas.
+//ici commence le dÃ©placement de dÃ©placementBas.
 
     for(int j=0; j<plateau.size(); j++)
     {
