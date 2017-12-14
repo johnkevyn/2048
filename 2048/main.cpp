@@ -11,25 +11,26 @@ int main()
     Plateau p;
 	p = plateauInitial();
     int k;
+	testsFonctions();  //appelle la fonction des tests
     initscr();
-    noecho();//Fonction qui permet de ne pas afficher ce qu'on écrit.
-    raw();//Fonction qui permet de pas avoir besoin d'appuyer sur Enter pour que l'ordinateur exécute la commande demandé
-    keypad(stdscr,TRUE);//Fonction qui permet de pouvoir utiliser les flèches dirrectionel.
+    noecho();//Fonction qui permet de ne pas afficher ce qu'on Ã©crit.
+    raw();//Fonction qui permet de pas avoir besoin d'appuyer sur Enter pour que l'ordinateur exÃ©cute la commande demandÃ©
+    keypad(stdscr,TRUE);//Fonction qui permet de pouvoir utiliser les flÃ¨ches dirrectionel.
 
    attron(A_BLINK);//La fonction le met en gras.
             mvprintw(0,0,"2048  par J.TOGUEM et L.BENALI\n");
 
     while(1){
             if ( estGagnant(p) ) {
-		mvprintw(1,0,"Bravo! vous avez réussi le défi !!");
+		mvprintw(1,0,"Bravo! vous avez rÃ©ussi le dÃ©fi !!");
 		getch();
 		refresh();
 		return 0;
 	}
 	if(estTermine(p)){
-        mvprintw(1,0,"Jeu terminé! dommage, vous aurez plus de chance la prochaine fois");
-		getch();//Fonction qui permet de lire un caractère entré par l'utilisateur
-		refresh();//Fonction qui permet de rafrachir ce qui a affiché.
+        mvprintw(1,0,"Jeu terminÃ©! dommage, vous aurez plus de chance la prochaine fois");
+		getch();//Fonction qui permet de lire un caractÃ¨re entrÃ© par l'utilisateur
+		refresh();//Fonction qui permet de rafrachir ce qui a affichÃ©.
 		return 0;
 	}
 
@@ -100,9 +101,9 @@ int main()
 	} while(b==false );
 
 	if ( estGagnant(p) ) {
-		cout<<"Bravo! vous avez réussi le défi !!\n";
+		cout<<"Bravo! vous avez rÃ©ussi le dÃ©fi !!\n";
 	} else {
-		cout<<"Jeu terminé! dommage, vous aurez plus de chance la prochaine fois.\n";
+		cout<<"Jeu terminÃ©! dommage, vous aurez plus de chance la prochaine fois.\n";
 	}*/
 
 
